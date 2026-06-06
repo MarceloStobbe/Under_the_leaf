@@ -5,6 +5,11 @@ from quiz import QUIZ_DATA
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'a_key_very_secret'
 
+import os
+app = Flask(__name__, 
+            template_folder='templates', 
+            static_folder='static')
+
 @app.route('/')
 def home():
     return render_template('home.html')
