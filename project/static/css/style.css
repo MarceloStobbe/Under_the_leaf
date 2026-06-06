@@ -191,3 +191,8 @@ body, html {
 .footer {
     flex-shrink: 0;
 }
+
+.min-vh-100 {
+    min-height: 100vh;
+    min-height: -webkit-fill-available; 
+}
