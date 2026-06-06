@@ -1,4 +1,5 @@
 Under the Leaf 🌿
+
 Under the Leaf is an interactive web application developed with Flask (Python), created for plant enthusiasts who want to better care for their green companions. The project offers a plant health diagnostic tool, environment guides, educational content, and organic fertilizer recipes.
 
 🚀 Features
