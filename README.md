@@ -12,9 +12,9 @@ Under the Leaf is an interactive web application developed with Flask (Python), 
 **Organic Fertilizers**: Tips on how to nourish your plants in an eco-friendly way.
 
 ## 🛠 Technologies Used
-**Back-end**: Python, Flask
+**Back-end**: Python, Flask.
 
-**Front-end**: HTML5, CSS3, Bootstrap 5, Jinja2
+**Front-end**: HTML5, CSS3, Bootstrap 5, Jinja2.
 
 **Architecture**: Modular structure for diagnostic and quiz data.
 
@@ -47,16 +47,22 @@ git clone https://github.com/MarceloStobbe/Under_the_leaf.git
 Navigate to the project folder:
 
 Bash
+
 cd Under_the_leaf
+
 Install dependencies:
 
 Bash
+
 pip install flask
+
 Run the application:
 
 Bash
 python app.py
+
 Access in your browser:
+
 Open http://127.0.0.1:5000
 
 ## 👤 Author
