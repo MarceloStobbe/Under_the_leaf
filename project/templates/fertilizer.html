@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-2 text-white">
+    <div class="glass p-4 shadow-lg">
+        <h1 class="fw-bold mb-4 text-center">Organic Homemade Fertilizers</h1>
+        <p class="text-justify lead mb-5">
+            Nourishing your plants doesn't require expensive synthetic chemicals. Many common household items are packed
+            with the essential
+            nutrients—Nitrogen, Phosphorus, and Potassium—that your green companions need to thrive. Using organic,
+            homemade fertilizers
+            is a sustainable way to recycle waste while providing a gentle, steady supply of nutrients, ensuring your
+            soil remains
+            healthy and your plants grow vibrant and strong.
+        </p>
+
+        <hr class="my-2 border-light">
+
+        <h3 class="fw-bold mb-3">1. Eggshell Calcium Boost</h3>
+        <p class="text-justify">
+            Eggshells are a fantastic source of calcium, which helps strengthen plant cell walls and prevent blossom end
+            rot. To prepare this,
+            simply collect your used eggshells, rinse them thoroughly, and let them dry completely. Once dry, crush them
+            into a fine powder
+            using a mortar and pestle or a blender. Sprinkle this powder directly onto the topsoil around your plants.
+            This slow-release
+            supplement is perfect for tomatoes, peppers, and leafy greens.
+        </p>
+        <div class="d-flex justify-content-center mb-5">
+            <img src="{{ url_for('static', filename='img/eggshell.jpg') }}" class="img-standard"
+                alt="Eggshell Fertilizer">
+        </div>
+
+        <h3 class="fw-bold mb-3">2. Banana Peel Potassium Tea</h3>
+        <p class="text-justify">
+            Bananas are rich in potassium, a vital nutrient that promotes flowering and overall plant vitality. Making a
+            "banana tea" is
+            an incredibly simple process: place fresh banana peels in a jar, cover them with water, and let them soak
+            for 24 to 48 hours.
+            Remove the peels and use the nutrient-rich water to feed your plants. This liquid fertilizer is ideal for
+            indoor potted plants
+            and flowering shrubs that need an extra boost during their growth cycle.
+        </p>
+        <div class="d-flex justify-content-center mb-3">
+            <img src="{{ url_for('static', filename='img/banana.jpg') }}" class="img-standard"
+                alt="Banana Peel Fertilizer">
+        </div>
+
+    </div>
+</div>
+{% endblock %}

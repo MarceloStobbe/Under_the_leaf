@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-2">
+    <div class="glass p-4">
+
+        <h1 class="text-center title-custom mb-4 fw-bold">Get in Touch</h1>
+        <p class="text-center text-custom mb-4">Have a question about your plant? Let me know and I'll help you out!</p>
+
+        <form action="{{ url_for('submit_contact') }}" method="POST" class="row g-3">
+            <div class="col-12">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" name="name" class="form-control glass-input" placeholder="Your Name"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" name="email" class="form-control glass-input" placeholder="Your Email"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <select name="plant_type" class="form-select glass-input" required>
+                    <option value="" selected disabled>Select your plant type</option>
+                    <option value="aloe_vera">Aloe Vera</option>
+                    <option value="boston_fern">Boston Fern</option>
+                    <option value="dracaena">Dracaena</option>
+                    <option value="english_ivy">English Ivy</option>
+                    <option value="fiddle_leaf_fig">Fiddle Leaf Fig</option>
+                    <option value="jade_plant">Jade Plant</option>
+                    <option value="monstera_deliciosa">Monstera Deliciosa</option>
+                    <option value="parlor_palm">Parlor Palm</option>
+                    <option value="peace_lily">Peace Lily</option>
+                    <option value="philodendron">Philodendron</option>
+                    <option value="pothos">Pothos</option>
+                    <option value="rubber_plant">Rubber Plant</option>
+                    <option value="snake_plant">Snake Plant</option>
+                    <option value="spider_plant">Spider Plant</option>
+                    <option value="zz_plant">ZZ Plant</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <select name="issue_type" class="form-select glass-input" required>
+                    <option value="" selected disabled>What is the main issue?</option>
+                    <option value="brown_crispy_edges">Brown crispy edges</option>
+                    <option value="dropping_leaves">Dropping leaves</option>
+                    <option value="leaf_spots">Leaf spots</option>
+                    <option value="leggy_stems">Leggy stems</option>
+                    <option value="root_rot">Root rot</option>
+                    <option value="sticky_residue">Sticky residue</option>
+                    <option value="stunted_growth">Stunted growth</option>
+                    <option value="sunburn">Sunburn / Scorched leaves</option>
+                    <option value="webbing">Webbing</option>
+                    <option value="powdery_mildew">White powdery patches (Powdery Mildew)</option>
+                    <option value="wilting">Wilting</option>
+                    <option value="yellowing">Yellowing leaves (Chlorosis)</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <label class="text-custom mb-2">How often do you water it?</label>
+                <div class="d-flex gap-3">
+                    <input type="radio" class="btn-check" name="water_freq" id="freq1" value="daily" required>
+                    <label class="btn btn-outline-light" for="freq1">Daily</label>
+
+                    <input type="radio" class="btn-check" name="water_freq" id="freq2" value="weekly" required>
+                    <label class="btn btn-outline-light" for="freq2">Weekly</label>
+
+                    <input type="radio" class="btn-check" name="water_freq" id="freq3" value="monthly" required>
+                    <label class="btn btn-outline-light" for="freq3">Monthly</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <textarea name="extra_info" class="form-control glass-input" rows="4"
+                    placeholder="Any extra information? (e.g., how long you've had it, location, or recent changes)"></textarea>
+            </div>
+
+            <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-outline-light px-4 py-2 fw-bold" style="border-width: 2px;">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

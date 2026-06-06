@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-2">
+    <div class="glass p-4 text-white">
+        <h1 class="text-center title-custom mb-4 fw-bold">Plant Health Diagnostic</h1>
+        <p class="text-center mb-5" style="font-size: 1.1rem;">
+            Select your plant and the symptom observed. I will provide a detailed analysis to restore your plant's
+            health.
+        </p>
+
+        <form action="{{ url_for('help') }}" method="POST" class="row g-3">
+            <div class="col-md-6">
+                <label class="mb-2 fw-bold">Plant:</label>
+                <select name="plant" class="form-select glass-input" required>
+                    <option value="">-- Choose the Plant --</option>
+                    {% for key, data in diagnostics %}
+                    <option value="{{ key }}">{{ data.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="mb-2 fw-bold">Symptom:</label>
+                <select name="symptom" class="form-select glass-input" required>
+                    <option value="">-- Choose the Symptom --</option>
+                    <option value="brown_edges">Brown leaf edges</option>
+                    <option value="leaf_drop">Leaf drop</option>
+                    <option value="leaf_spots">Dark spots</option>
+                    <option value="leggy_stems">Leggy/weak stems</option>
+                    <option value="mushy_base">Mushy base</option>
+                    <option value="sunburn">Sunburn</option>
+                    <option value="wilting">Constant wilting</option>
+                    <option value="wrinkled_leaves">Wrinkled leaves</option>
+                    <option value="yellow_stems">Yellow stems</option>
+                    <option value="yellowing">Yellowing leaves</option>
+                </select>
+            </div>
+
+            <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-outline-light px-5 py-2 fw-bold">Analyze Symptom</button>
+            </div>
+        </form>
+
+        {% if error %}
+        <div class="alert alert-warning text-center mt-4 glass"
+            style="background: rgba(62, 111, 84, 0.2); color: #fff; border: 1px solid #3b583a;">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if result %}
+        <div class="mt-5 p-4 border-top border-light d-flex align-items-center">
+            {% if selected_plant_key %}
+            <div class="me-4 flex-shrink-0">
+                <img src="{{ url_for('static', filename='img/' + selected_plant_key + '.jpg') }}"
+                    alt="{{ result.plant_name }}" class="img-fluid rounded shadow"
+                    style="max-width: 150px; height: 150px; object-fit: cover; border: 2px solid white;">
+            </div>
+            {% endif %}
+
+            <div>
+                <h3 class="fw-bold mb-3">Report: {{ result.plant_name }}</h3>
+                <p><strong>Symptom:</strong> {{ result.problem }}</p>
+                <p><strong>Probable cause:</strong> {{ result.cause }}</p>
+                <p><strong>Recommended treatment:</strong> {{ result.solution }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

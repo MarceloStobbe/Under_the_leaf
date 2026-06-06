@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-2">
+    <div class="glass p-4">
+        <h1 class="text-center title-custom mb-4 fw-bold">Let Your Home Breathe Life</h1>
+        <div class="px-2">
+            <p class="text-custom" style="text-align: justify; font-size: 1.1rem; line-height: 1.7;">
+                Have you ever felt that indescribable peace upon entering a room filled with greenery?
+                It’s not just decor, it’s about creating a sanctuary, a breath of fresh air in the
+                middle of a busy routine. <em>Under the Leaf</em> was born from my long-standing
+                passion for watching every new leaf unfurl and learning that, just like us, plants
+                have their own unique rhythm and pace. Whether you are just starting your journey
+                or you already have a small indoor forest at home and are looking to better
+                understand what your green companions are trying to tell you, you are in the
+                right place. I’ve created this space to share techniques, care tips, and, above
+                all, the joy of watching nature flourish within the four walls of your home.
+                Shall we nurture this connection together?
+            </p>
+            <div class="text-center mt-4">
+                <a href="{{ url_for('about') }}" class="btn btn-custom px-4 py-2 fw-bold">
+                    Learn more about Under the Leaf
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-3">
+    <div class="glass p-4">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="glass-image-container"
+                    style="border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,255,255,0.2);">
+                    <img src="{{ url_for('static', filename='img/help.png') }}" alt="PlantHelp" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-lg-7 mt-4 mt-lg-0">
+                <h2 class="title-custom text mb-4 fw-bold">Need a Green Lifeline?</h2>
+                <p class="text-custom" style="text-align: justify; font-size: 1.1rem; line-height: 1.7;">
+                    Plants sometimes speak a language we don’t quite understand—browning leaves, drooping stems,
+                    or quiet spots. If your green companion is struggling, don't worry. I’m here to help you
+                    diagnose the problem and guide you back to a thriving, vibrant home. Let's fix it together.
+                </p>
+                <div class="mt-4 text-center">
+                    <a href="{{ url_for('help') }}" class="btn btn-custom px-4 py-2 fw-bold">
+                        Ask for Help
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row g-4 my-1">
+        <div class="col-md-4">
+            <div class="card glass shadow-lg border-0 h-100">
+                <div class="card-body text-white text-center">
+                    <h3 class="card-title fw-bold">Plants by Room</h3>
+                    <p class="card-text">
+                        Wondering which plant thrives in your living room or survives in your bathroom?
+                        Discover the perfect species for every corner of your home.
+                    </p>
+                    <img src="{{ url_for('static', filename='img/ambients.jpg') }}" class="img-fluid rounded mb-3"
+                        alt="Plants by room" style="max-height: 150px; object-fit: cover;">
+
+                    <a href="{{ url_for('environments') }}" class="btn btn-outline-light d-block mt-2">Explore Guide</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card glass shadow-lg border-0 h-100">
+                <div class="card-body text-white text-center">
+                    <h3 class="card-title fw-bold">Plant Myths & Truths</h3>
+                    <p class="card-text">
+                        Think you know everything about plant care? Test your knowledge in our interactive
+                        quiz and separate common gardening myths from scientific facts.
+                    </p>
+                    <img src="{{ url_for('static', filename='img/myths.jpg') }}" class="img-fluid rounded mb-3"
+                        alt="Plant Myths and Truths" style="max-height: 150px; object-fit: cover;">
+
+                    <a href="{{ url_for('myths') }}" class="btn btn-outline-light d-block mt-2">Take the Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card glass shadow-lg border-0 h-100">
+                <div class="card-body text-white text-center">
+                    <h3 class="card-title fw-bold">Organic Fertilizers</h3>
+                    <p class="card-text">
+                        Give your plants the nutrients they deserve! Discover simple, homemade,
+                        and eco-friendly fertilizer recipes to boost growth using common household items.
+                    </p>
+                    <img src="{{ url_for('static', filename='img/fertilizer.jpg') }}" class="img-fluid rounded mb-3"
+                        alt="Organic Fertilizers" style="max-height: 150px; object-fit: cover;">
+
+                    <a href="{{ url_for('fertilizer') }}" class="btn btn-outline-light d-block mt-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

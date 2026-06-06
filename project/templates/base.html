@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under the Leaf 🌿</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="custom-header py-0">
+        <nav class="navbar navbar-expand-lg navbar-dark h-100">
+            <div class="container d-flex justify-content-between align-items-end h-100 pb-3">
+
+                <div class="d-flex justify-content-start">
+                    <a href="{{ url_for('home') }}">
+                        <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo - Under the Leaf - Pants/ Care/ Tips" height="80">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <div class="d-flex flex-column flex-lg-row gap-4">
+                        <a class="text-white text-decoration-none fw-bold menu-link"
+                            href="{{ url_for('home') }}">Home</a>
+                        <a class="text-white text-decoration-none fw-bold menu-link"
+                            href="{{ url_for('about') }}">About</a>
+                        <a class="text-white text-decoration-none fw-bold menu-link"
+                            href="{{ url_for('contact') }}">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1">
+        <div class="container mt-0">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-success text-center glass"
+                style="background: rgba(40, 167, 69, 0.2); border: 1px solid #28a745; color: white;">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="text-center custom-footer py-3 mt-2">
+        <div class="container">
+            <p class="mb-1 fw-bold">Under the Leaf</p>
+            <p class="mb-1" style="font-size: 14px;">Your essential guide to indoor plant care.</p>
+            <small>&copy; 2026. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

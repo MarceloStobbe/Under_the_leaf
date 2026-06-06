@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-2 text-white">
+    <div class="glass p-4 shadow-lg">
+
+        {% if score is not none %}
+        <div class="text-center">
+            <h1 class="fw-bold mb-4">Quiz Results</h1>
+            <p class="lead">Hello <strong>{{ username }}</strong>, your final score is: <strong>{{ score }}/10</strong>!
+            </p>
+
+            <p class="mt-4 fs-5">
+                <em>
+                    {% if score == 10 %}
+                    Wow, you're a Plant Whisperer! Do you secretly talk to them? 🌿✨
+                    {% elif score >= 6 %}
+                    Pretty good! You definitely know your way around a watering can. 💧
+                    {% elif score >= 2 %}
+                    A bit shaky... maybe your plants are judging you right now. 🪴
+                    {% else %}
+                    Oh dear... maybe stick to plastic plants for now? 🌵
+                    {% endif %}
+                </em>
+            </p>
+
+            <a href="{{ url_for('myths') }}" class="btn btn-outline-light mt-4">Restart Quiz</a>
+        </div>
+
+        {% else %}
+        <h1 class="fw-bold mb-4 text-center">Plant Myths & Truths Quiz</h1>
+        <p class="text-center mb-4">Answer the questions below to test your knowledge!</p>
+
+        <form method="POST">
+            <div class="mb-4">
+                <input type="text" name="username" class="form-control" placeholder="Enter your name or nickname..."
+                    required style="background: transparent; color: white; border: 1px solid white;">
+            </div>
+
+            {% for item in questions %}
+            <div class="mb-4 p-3 glass">
+                <p class="mb-2"><strong>{{ item.id + 1 }}. {{ item.q }}</strong></p>
+
+                <input class="form-check-input" type="radio" name="q{{ item.id }}" id="true{{ item.id }}" value="True"
+                    required>
+                <label class="radio-label" for="true{{ item.id }}">True</label>
+
+                <input class="form-check-input" type="radio" name="q{{ item.id }}" id="false{{ item.id }}"
+                    value="False">
+                <label class="radio-label" for="false{{ item.id }}">False</label>
+            </div>
+            {% endfor %}
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-outline-light px-5 py-2">Submit Answers</button>
+            </div>
+        </form>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

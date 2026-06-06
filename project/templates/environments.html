@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-2 text-white">
+    <div class="glass p-4 shadow-lg">
+        <h1 class="fw-bold mb-4 text-center">The Importance of Choosing the Right Plant for Each Space</h1>
+        <p class="text-justify lead mb-5">
+            Selecting the perfect plant for every room is more than just a matter of aesthetics; it is an act of care
+            that mimics nature.
+            Every plant has a unique origin, and its health depends directly on how well we can replicate those native
+            conditions within our homes.
+            By understanding the light intensity, humidity, and airflow of each specific spot, we create a thriving
+            environment where green companions
+            do not simply survive, but truly flourish. Proper placement is the first, and most important, step toward a
+            healthier, more vibrant home.
+        </p>
+
+        <hr class="my-2 border-light">
+        <h3 class="fw-bold mb-3">Living Room: The Social Hub</h3>
+        <p class="text-justify">
+            The living room is typically the heart of the home, offering generous space and varying light levels. This
+            environment is ideal for
+            statement plants that can grow comfortably without being cramped. Large species such as the Monstera
+            Deliciosa or the Fiddle Leaf Fig
+            thrive here, serving as natural centerpieces. When placing your plants, consider areas near windows where
+            they can receive ample
+            indirect light, allowing them to expand their foliage and bring a sense of tranquility to your social
+            gatherings.
+        </p>
+        <div class="d-flex justify-content-center mb-5">
+            <img src="{{ url_for('static', filename='img/living_room.jpg') }}" class="img-standard" alt="Plants forLiving Room">
+        </div>
+
+        <h3 class="fw-bold mb-3">Dining Room: Sophistication and Growth</h3>
+        <p class="text-justify">
+            In the dining room, elegance is key. This space often benefits from medium-sized plants that provide a touch
+            of nature without
+            overwhelming the dining experience. Trailing plants, such as a lush Pothos or a Philodendron, placed on
+            sideboards or shelves, can create
+            a sophisticated and organic visual line. These plants are resilient and handle the ambient indoor conditions
+            well, adding life to
+            your family meals and dinner parties alike.
+        </p>
+        <div class="d-flex justify-content-center mb-5">
+            <img src="{{ url_for('static', filename='img/dining_room.jpg') }}" class="img-standard" alt="Plants forDining Room">
+        </div>
+
+        <h3 class="fw-bold mb-3">Bedroom: A Sanctuary for Rest</h3>
+        <p class="text-justify">
+            The bedroom is your personal sanctuary, and the plants chosen here should contribute to a sense of calm and
+            well-being. Focus on
+            species known for their air-purifying qualities, such as the Snake Plant or Aloe Vera. These plants are not
+            only low-maintenance but
+            also help improve indoor air quality, promoting a peaceful atmosphere for rest. Keeping the bedroom green is
+            a wonderful way to
+            wake up to a fresher, more revitalizing environment every morning.
+        </p>
+        <div class="d-flex justify-content-center mb-5">
+            <img src="{{ url_for('static', filename='img/bedroom.jpg') }}" class="img-standard" alt="Plants for Bedroom">
+        </div>
+
+        <h3 class="fw-bold mb-3">Kitchen: Vitality and Freshness</h3>
+        <p class="text-justify">
+            Kitchens are dynamic spaces characterized by changing temperatures and good natural light. This environment
+            is the perfect spot for
+            culinary herbs, which appreciate the brightness and accessibility. If you prefer ornamental plants, the
+            Pothos is an excellent
+            choice here, as it is incredibly hardy and enjoys the occasional misting. Having greenery in the kitchen
+            adds a vibrant, energetic
+            touch to the place where you prepare your meals.
+        </p>
+        <div class="d-flex justify-content-center mb-5">
+            <img src="{{ url_for('static', filename='img/kitchen.jpg') }}" class="img-standard" alt="Plants for Kitchen">
+        </div>
+
+        <h3 class="fw-bold mb-3">Bathroom: Humidity and Moisture</h3>
+        <p class="text-justify">
+            The bathroom is unique due to its high humidity levels, often resembling a tropical micro-climate. Many
+            plants from rainforest origins,
+            such as Ferns, Peace Lilies, and Orchids, thrive in this moisture-rich atmosphere. Placing these plants in
+            your bathroom is a
+            fantastic way to utilize a space that is often ignored. The humidity keeps their leaves hydrated and
+            healthy, turning a functional
+            room into a serene, spa-like escape.
+        </p>
+        <div class="d-flex justify-content-center mb-3">
+            <img src="{{ url_for('static', filename='img/bathroom.jpg') }}" class="img-standard" alt="Plants for Bathroom">
+        </div>
+    </div>
+</div>
+{% endblock %}
