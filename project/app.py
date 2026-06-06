@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from diagnostics import DIAGNOSTICS
 from quiz import QUIZ_DATA
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'a_key_very_secret'
-
 import os
+
 app = Flask(__name__, 
             template_folder='templates', 
             static_folder='static')
+
+app.config['SECRET_KEY'] = 'a_key_very_secret'
 
 @app.route('/')
 def home():
