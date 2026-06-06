@@ -19,6 +19,7 @@ Under the Leaf is an interactive web application developed with Flask (Python), 
 **Architecture**: Modular structure for diagnostic and quiz data.
 
 ## 📁 Project Structure
+```text
 Under_the_leaf/
 └── project/                  # Root folder of the application
     ├── app.py                # Main application (routes and logic)
@@ -43,7 +44,9 @@ Under_the_leaf/
 Clone this repository:
 
 Bash
+
 git clone https://github.com/MarceloStobbe/Under_the_leaf.git
+
 Navigate to the project folder:
 
 Bash
