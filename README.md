@@ -39,8 +39,10 @@ Under_the_leaf/
     │   ├── environments.html # Environment guide
     │   └── fertilizer.html   # Fertilizer tips
     └── venv/                 # Virtual environment
-  
+```
+
 ## ⚙️ How to Run
+
 Clone this repository:
 
 Bash
