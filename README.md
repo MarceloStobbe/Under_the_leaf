@@ -47,29 +47,23 @@ Under_the_leaf/
 Clone this repository:
 
 Bash
-
 git clone https://github.com/MarceloStobbe/Under_the_leaf.git
 
 Navigate to the project folder:
-
 Bash
-
 cd Under_the_leaf
 
 Install dependencies:
-
 Bash
-
 pip install flask
 
 Run the application:
-
 Bash
 python app.py
 
 Access in your browser:
-
 Open http://127.0.0.1:5000
+
 ## 🤖 AI Integration & Credits
 
 This project was developed with the assistance of Gemini AI. Gemini played a key role in:
