@@ -42,7 +42,7 @@ def load_user(user_id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('home'))
+        return redirect(url_for('forum'))
     
     form = AuthForm()
     if form.validate_on_submit():
@@ -53,7 +53,7 @@ def login():
         if user and user.password == password:
             login_user(user)
             flash(f'Login successful! Welcome, {user.name}!', 'success')
-            return redirect(url_for('home'))
+            return redirect(url_for('forum'))
         else:
             flash('Invalid email or password.', 'danger')
             
@@ -62,7 +62,7 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('home'))
+        return redirect(url_for('forum'))
     
     form = AuthForm()
     if form.validate_on_submit():

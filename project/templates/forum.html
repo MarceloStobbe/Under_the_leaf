@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container my-2 text-white">
+<div class="container my-2 mb-0 text-white">
     <div class="glass p-4 shadow-lg">
 
         <h1 class="fw-bold mb-4 text-center">Community</h1>
@@ -13,8 +13,7 @@
             <form method="POST" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
                 <div class="mb-3">
-                    {{ form.content(class="form-control", rows="3", placeholder="What would you like to ask or share
-                    about plants?", style="background: transparent; color: white; border: 1px solid rgba(255, 255, 255,
+                    {{ form.content(class="form-control", rows="3", placeholder="What would you like to ask or share about plants?", style="background: transparent; color: white; border: 1px solid rgba(255, 255, 255,
                     0.4);") }}
                 </div>
                 <div class="mb-3">
