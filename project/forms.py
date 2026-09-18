@@ -10,7 +10,7 @@ class AuthForm(FlaskForm):
 
 class QuestionForm(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired(), Length(min=5)])
-    submit = SubmitField('Post Question')
+    submit = SubmitField('Save changes')
 
 class CommentForm(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired(), Length(min=2)])

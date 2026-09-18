@@ -9,20 +9,27 @@
 
         {% if current_user.is_authenticated %}
         <div class="glass p-4 mb-4">
-            <h5 class="mb-3 fw-bold">Share a question or tip</h5>
-            <form method="POST" enctype="multipart/form-data">
-                {{ form.hidden_tag() }}
-                <div class="mb-3">
-                    {{ form.content(class="form-control", rows="3", placeholder="What would you like to ask or share about plants?", style="background: transparent; color: white; border: 1px solid rgba(255, 255, 255,
-                    0.4);") }}
-                </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label small text-white-50">Attach Image (optional)</label>
-                    <input type="file" name="image" class="form-control" id="image"
-                        style="background: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.4);">
-                </div>
-                <button type="submit" class="btn btn-glass-green px-4 py-2 fw-bold">Post Question</button>
-            </form>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold">Share a question or tip</h5>
+                <button class="btn btn-glass-green px-4 py-2 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestionForm" aria-expanded="false" aria-controls="collapseQuestionForm">
+                    Add
+                </button>
+            </div>
+
+            <div class="collapse mt-3" id="collapseQuestionForm">
+                <form method="POST" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        {{ form.content(class="form-control", rows="3", placeholder="What would you like to ask or share about plants?", style="background: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.4);") }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label small text-white-50">Attach Image (optional)</label>
+                        <input type="file" name="image" class="form-control" id="image"
+                            style="background: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.4);">
+                    </div>
+                    <button type="submit" class="btn btn-glass-green px-4 py-2 fw-bold">Post</button>
+                </form>
+            </div>
         </div>
         {% else %}
         <div class="glass p-3 mb-4 text-center">
@@ -62,10 +69,10 @@
             <div class="d-flex gap-2 mb-3">
                 <a href="{{ url_for('edit_question', question_id=q.id) }}"
                     class="btn btn-glass-yellow px-3 py-1 fw-bold" style="font-size: 0.85rem;">Edit</a>
-                <form action="{{ url_for('delete_question', question_id=q.id) }}" method="POST" class="d-inline">
-                    <button type="submit" class="btn btn-glass-red px-3 py-1 fw-bold" style="font-size: 0.85rem;"
-                        onclick="return confirm('Do you want to delete this question?')">Delete</button>
-                </form>
+                
+                <button type="button" class="btn btn-glass-red px-3 py-1 fw-bold" style="font-size: 0.85rem;"
+                    data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" 
+                    data-url="{{ url_for('delete_question', question_id=q.id) }}">Delete</button>
             </div>
             {% endif %}
 
@@ -105,12 +112,11 @@
                             <a href="{{ url_for('edit_comment', comment_id=comment.id) }}"
                                 class="btn btn-glass-yellow px-2 py-1 fw-bold"
                                 style="font-size: 0.75rem; line-height: 1;">Edit</a>
-                            <form action="{{ url_for('delete_comment', comment_id=comment.id) }}" method="POST"
-                                class="d-inline">
-                                <button type="submit" class="btn btn-glass-red px-2 py-1 fw-bold"
-                                    style="font-size: 0.75rem; line-height: 1;"
-                                    onclick="return confirm('Delete comment?')">Delete</button>
-                            </form>
+                            
+                            <button type="button" class="btn btn-glass-red px-2 py-1 fw-bold"
+                                style="font-size: 0.75rem; line-height: 1;"
+                                data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" 
+                                data-url="{{ url_for('delete_comment', comment_id=comment.id) }}">Delete</button>
                         </div>
                         {% endif %}
                     </div>
