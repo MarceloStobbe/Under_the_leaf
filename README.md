@@ -44,6 +44,7 @@ Under_the_leaf/
     ├── quiz.py               # Data for the myths and truths quiz
     ├── requirements.txt      # Project dependencies
     └── venv/                 # Virtual environment
+```
 
 ## ⚙️ How to Run
 
