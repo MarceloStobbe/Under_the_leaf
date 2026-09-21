@@ -45,7 +45,7 @@ Under_the_leaf/
     ├── requirements.txt      # Project dependencies
     └── venv/                 # Virtual environment
 
-    ## ⚙️ How to Run
+## ⚙️ How to Run
 
 Clone this repository:
 Bash
