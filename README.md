@@ -19,67 +19,52 @@ Under the Leaf is an interactive web application developed with Flask (Python), 
 ## 📁 Project Structure
 ```text
 Under_the_leaf/
-└── project/              # Root folder of the application
-    ├── instance/         # Instance folder for SQLite database storage
-    ├── static/           # Static files
-    │   ├── css/          # CSS styles (style.css)
-    │   ├── img/          # Project images and logo
-    │   └── uploads/      # User-uploaded files and media
-    ├── templates/        # HTML templates (Jinja2)
-    │   ├── about.html    # About page
-    │   ├── base.html     # Base layout
-    │   ├── contact.html  # Contact form
-    │   ├── edit.html     # Edit profile or post page
+└── project/                  # Root folder of the application
+    ├── instance/             # Instance folder for SQLite database storage
+    ├── static/               # Static files
+    │   ├── css/              # CSS styles (style.css)
+    │   ├── img/              # Project images and logo
+    │   └── uploads/          # User-uploaded files and media
+    ├── templates/            # HTML templates (Jinja2)
+    │   ├── about.html        # About page
+    │   ├── base.html         # Base layout
+    │   ├── contact.html      # Contact form
+    │   ├── edit.html         # Edit profile or post page
     │   ├── environments.html # Environment guide
     │   ├── fertilizer.html   # Fertilizer tips
-    │   ├── forum.html    # Community forum page
-    │   ├── help.html     # Diagnostic system
-    │   ├── home.html     # Home page
-    │   ├── login.html    # User login page
-    │   └── myths.html    # Myths quiz
-    ├── app.py            # Main application (routes and logic)
-    ├── diagnostics.py    # Database for plant diagnostics
-    ├── forms.py          # WTForms definitions for user input
-    ├── models.py         # Database models and schema definitions
-    ├── quiz.py           # Data for the myths and truths quiz
-    ├── requirements.txt  # Project dependencies
-    └── venv/             # Virtual environment
+    │   ├── forum.html        # Community forum page
+    │   ├── help.html         # Diagnostic system
+    │   ├── home.html         # Home page
+    │   ├── login.html        # User login page
+    │   └── myths.html        # Myths quiz
+    ├── app.py                # Main application (routes and logic)
+    ├── diagnostics.py        # Database for plant diagnostics
+    ├── forms.py              # WTForms definitions for user input
+    ├── models.py             # Database models and schema definitions
+    ├── quiz.py               # Data for the myths and truths quiz
+    ├── requirements.txt      # Project dependencies
+    └── venv/                 # Virtual environment
 
     ## ⚙️ How to Run
 
 Clone this repository:
 
-
-
 Bash
-
 git clone https://github.com/MarceloStobbe/Under_the_leaf.git
-
-
 
 Navigate to the project folder:
 
 Bash
-
 cd Under_the_leaf
 
-
-
 Install dependencies:
-
 Bash
-
 pip install flask
-
-
 
 Run the application:
 
 Bash
-
 python app.py
-
-
 
 Access in your browser:
 
@@ -89,19 +74,9 @@ Open http://127.0.0.1:5000
 
 ## 🤖 AI Integration & Credits
 
-
-
 This project was developed with the assistance of Gemini AI. Gemini played a key role in:
-
-
-
 Logo Creation: Assisting in the conceptualization and design of the project's logo.
-
-
-
 Content Research: Providing information on indoor plant care, identifying common plant health issues, developing organic fertilizer recipes, and recommending ideal plant species for different home environments.
-
-
 
 ## 👤 Author
 
